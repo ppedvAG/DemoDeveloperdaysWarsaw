@@ -1,0 +1,23 @@
+﻿@page "/counterform"
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+
+<form   data-enhance>
+    <input name="currentCount" readonly class="form-control-plaintext" value="@currentCount" />
+    <button class="btn btn-primary" >Click me</button>
+</form>
+@code {
+    [SupplyParameterFromQuery]
+    private int currentCount { get; set; }
+
+
+
+    protected override void OnInitialized()
+    {
+    
+        currentCount++;
+    }
+}
+
